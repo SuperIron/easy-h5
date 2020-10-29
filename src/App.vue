@@ -4,10 +4,10 @@
         <router-view v-show="!isLoadingOpened" />
 
         <!-- 加载页 -->
-        <!-- <loading
-            v-if="isLoadingOpened"
-            @on-complete="handleLoadingComplete"
-        ></loading> -->
+        <loading
+            v-show="isLoadingOpened"
+            @on-complete="onLoadingComplete"
+        ></loading>
 
         <bg-music
             :autoplay="bgMusic.autoplay"
@@ -21,18 +21,24 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import BgMusic from "@/components/bg-music/index.vue";
-import config from "./config";
+import Loading from "@/components/loading/index.vue";
+import config from "@/config";
 
 const { bgMusic } = config;
 
 @Component({
     components: {
-        BgMusic
+        BgMusic,
+        Loading
     }
 })
 export default class App extends Vue {
     private bgMusic = bgMusic;
     private isLoadingOpened = true;
+
+    private onLoadingComplete() {
+        this.isLoadingOpened = false;
+    }
 }
 </script>
 

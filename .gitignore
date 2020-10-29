@@ -1,7 +1,7 @@
 .DS_Store
 node_modules
 /dist
-
+/src/utils/preload/manifest.json
 
 # local env files
 .env.local

@@ -3,5 +3,5 @@ declare module "*.vue" {
     export default Vue;
 }
 
-declare module "jweixin-npm";
 declare module "weixin-js-sdk";
+declare module "preload-js";

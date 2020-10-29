@@ -2,13 +2,37 @@
 
 ## Description
 
-基于 vue + ts 搭建的快速开发 h5 框架
+基于 Vue 2.x + ts 搭建，可快速进行二次开发的 h5 框架，实现以下功能：
+
+1. [x] 背景音乐
+
+    - [x] 微信浏览器，自动播放
+
+    - [x] 非微信浏览器，点击屏幕播放
+
+2. [ ] 资源预加载
+
+    - [ ] 图片预加载
+
+    - [ ] 音频预加载
+
+3. [ ] 微信 api
+
+    - [ ] 登录
+
+    - [ ] 分享
+
+4. [ ] 文件上传
 
 ### Todo
 
 1. [x] bg-music
 
 2. [ ] preload
+
+    - [x] preload-js
+
+    - [x] manifest.json 
 
 3. [ ] request
 
@@ -28,6 +52,8 @@
 
 9. [ ] animate CSS3
 
+10. [ ] upload
+
 ### Pependencies
 
 1. [x] `axios`
@@ -38,7 +64,9 @@
 
 4. [x] `weixin-js-sdk` 微信 jssdk
 
-## Command
+5. [x] `preload-js` 资源预加载
+
+### Command
 
 ```bash
 # Project setup
@@ -56,3 +84,7 @@ npm run test:unit
 # Lints and fixes files
 npm run lint
 ```
+
+### author
+
+SuperIron
