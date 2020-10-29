@@ -1,0 +1,43 @@
+.bg-music {
+    position: fixed;
+    right: 4vw;
+    top: 4vw;
+    z-index: 99999999;
+
+    &__icon {
+        display: block;
+        width: 8vw;
+        height: 8vw;
+        overflow: hidden;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+    &--pause {
+        background-image: url("~@/assets/images/bg-music/pause.png");
+    }
+
+    &--play {
+        background-image: url("~@/assets/images/bg-music/play.png");
+        animation: revolve 1200ms linear infinite;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes revolve {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(-360deg);
+    }
+}
+
+@-webkit-keyframes revolve {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(-360deg);
+    }
+}
