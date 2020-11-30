@@ -14,7 +14,6 @@
             :src="require(`@/assets/${bgMusic.src}`)"
             ref="bgMusic"
         />
-        <router-view />
     </div>
 </template>
 
@@ -43,8 +42,6 @@ export default class App extends Vue {
 </script>
 
 <style lang="scss">
-body {
-    min-width: 100vw;
-    min-height: 100vh;
-}
+@import "~@/styles/normalize.css";
+@import "~@/styles/animate.css";
 </style>

@@ -1,4 +1,5 @@
 const config = {
+    title: "easy-h5",
     baseUrl: {
         dev: "https://api.opadsz.com/",
         pro: "https://api.opadsz.com/"
@@ -21,6 +22,17 @@ const config = {
              */
             output: "/src/mixins/preload"
         }
+    },
+    wx: {
+        appId: "wx729b39e5c4715918",
+        oauth: {
+            isOpened: false,
+            oauthUrl: "api/oauth"
+        },
+        /**
+         * 微信分享配置
+         */
+        share: { url: "api/zj3j_intro" }
     }
 };
 

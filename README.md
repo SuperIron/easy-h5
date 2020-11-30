@@ -20,7 +20,7 @@
 
     - [ ] 登录
 
-    - [ ] 分享
+    - [x] 分享
 
 4. [ ] 文件上传
 
@@ -32,7 +32,7 @@
 
     - [x] preload-js
 
-    - [x] manifest.json 
+    - [x] manifest.json
 
 3. [ ] request
 
@@ -44,13 +44,15 @@
 
 6. [ ] wx
 
+    - [x] share
+
 7. [ ] mixins
 
     - [ ] loading
 
-8. [ ] 通用样式
+8. [x] 通用样式
 
-9. [ ] animate CSS3
+9. [x] animate CSS3
 
 10. [ ] upload
 
@@ -84,6 +86,11 @@ npm run test:unit
 # Lints and fixes files
 npm run lint
 ```
+
+###
+
+1. vant
+    - https://vant-contrib.gitee.io/vant/#/zh-CN/
 
 ### author
 

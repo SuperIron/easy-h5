@@ -1,7 +1,9 @@
 const merge = require("webpack-merge");
 const tsImportPlugin = require("ts-import-plugin");
+const publicPath = process.env.NODE_ENV === "production" ? "./" : "/";
 
 module.exports = {
+    publicPath,
     lintOnSave: true,
     chainWebpack: config => {
         config.module

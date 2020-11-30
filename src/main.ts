@@ -3,6 +3,11 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import { Toast } from "vant";
+import config from "./config";
+import "@/utils/wx/share";
+
+// …Ë÷√ html µƒ title
+document.title = config.title;
 
 Vue.use(Toast);
 

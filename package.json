@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "serve": "vue-cli-service serve",
-        "build": "vue-cli-service build",
+        "build": "npm run preload && vue-cli-service build",
         "preload": "node ./scripts/preload.js",
         "test:unit": "vue-cli-service test:unit",
         "lint": "vue-cli-service lint"
