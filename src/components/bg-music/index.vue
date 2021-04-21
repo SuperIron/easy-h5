@@ -11,46 +11,32 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 import wx from "weixin-js-sdk";
 import { getSystemInfo } from "@/utils/tools";
 
-/**
- * @todo [x] 自动播放，不支持则点击触发播放
- */
-
 @Component
 export default class BgMusic extends Vue {
-    /**
-     * 背景音乐路径
-     */
-    @Prop() private src!: string;
-    /**
-     * 自动播放（仅支持微信浏览器内）
-     */
-    @Prop({ default: true }) private autoplay!: boolean;
+    /** 背景音乐路径 */
+    @Prop() public src!: string;
+    /** 自动播放（仅支持微信浏览器内） */
+    @Prop({ default: true }) public autoplay!: boolean;
 
-    private audio!: HTMLAudioElement;
-    private playing = false;
+    public audio!: HTMLAudioElement;
+    public playing = false;
 
-    private get stateClass() {
+    public get stateClass() {
         return this.playing ? "bg-music--play" : "bg-music--pause";
     }
 
-    private load() {
+    public load() {
         const { isWechat } = getSystemInfo();
-        /**
-         * 微信浏览器支持自动播放
-         */
+        // 微信浏览器支持自动播放
         if (isWechat) {
-            wx.config({
-                debug: false
-            });
+            wx.config();
             wx.ready(() => {
                 this.play();
                 !this.autoplay && this.pause();
             });
             return;
         }
-        /**
-         * 点击触发播放
-         */
+        // 点击触发播放
         const handler = (() => {
             this.play();
             document.body.removeEventListener("click", handler);
@@ -58,7 +44,7 @@ export default class BgMusic extends Vue {
         document.body.addEventListener("click", handler);
     }
 
-    private init() {
+    public init() {
         const audio = new Audio();
         audio.src = this.src;
         audio.loop = true;

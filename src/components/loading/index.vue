@@ -1,11 +1,11 @@
 <template>
     <div class="loading">
-        {{ percent }}
+        <!-- Loading -->
     </div>
 </template>
 
 <script lang="ts">
-import { Component } from "vue-property-decorator";
+import { Component, Watch } from "vue-property-decorator";
 import { mixins } from "vue-class-component";
 import preload from "@/mixins/preload";
 
@@ -13,8 +13,13 @@ import preload from "@/mixins/preload";
     components: {}
 })
 export default class Loading extends mixins(preload) {
-    private init() {
+    public init() {
         this.preload();
+    }
+
+    @Watch("progress")
+    onProgressChange(val: number) {
+        // progress change
     }
 
     created() {
@@ -23,4 +28,6 @@ export default class Loading extends mixins(preload) {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped lang="scss">
+@import "./index.scss";
+</style>

@@ -3,20 +3,14 @@ import { Component } from "vue-property-decorator";
 import createjs from "preload-js";
 
 export interface Manifest {
-    /**
-     * 文件名
-     */
+    /** 文件名 */
     filename: string;
-    /**
-     * 文件路径
-     */
+    /** 文件路径 */
     path: string;
 }
 
 export interface Asset {
-    /**
-     * 资源路径，带别名`@`
-     */
+    /** 资源路径，不带别名`@` */
     src: string;
 }
 
@@ -24,9 +18,7 @@ const manifest: Manifest[] = require("./manifest.json");
 const assets = manifest.reduce((pre: Asset[], item) => {
     try {
         pre.push({
-            /**
-             * @不能在遍历item里面，不然解析不了
-             */
+            /** @不能在遍历item里面，不然解析不了 */
             src: require(`@/${item.path}`)
         });
     } catch (err) {
@@ -34,8 +26,6 @@ const assets = manifest.reduce((pre: Asset[], item) => {
     }
     return pre;
 }, []);
-
-console.log({ assets });
 
 // You can declare mixins as the same style as components.
 @Component

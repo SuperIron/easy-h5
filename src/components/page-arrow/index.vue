@@ -30,10 +30,10 @@ import { Component, Prop, Vue } from "vue-property-decorator";
     components: {}
 })
 export default class PageArrow extends Vue {
-    @Prop({ default: false }) private toUp!: boolean;
-    @Prop({ default: false }) private toDown!: boolean;
-    @Prop({ default: false }) private toLeft!: boolean;
-    @Prop({ default: false }) private toRight!: boolean;
+    @Prop({ default: false }) public toUp!: boolean;
+    @Prop({ default: false }) public toDown!: boolean;
+    @Prop({ default: false }) public toLeft!: boolean;
+    @Prop({ default: false }) public toRight!: boolean;
 }
 </script>
 

@@ -4,7 +4,7 @@ import { Toast } from "vant";
 import config from "@/config";
 
 const baseURL =
-    process.env === "development" ? config.baseUrl.dev : config.baseUrl.pro;
+    process.env === "development" ? config.baseURL.dev : config.baseURL.pro;
 
 const service = axios.create({
     baseURL,
@@ -38,7 +38,7 @@ service.interceptors.response.use(
         // You can change this part for your own usage.
         const res = response.data;
         console.log(`request ${response.config.url}`, res);
-        // TODO:暂时不处理code
+        // TODO:
         // if (res.code !== 0) {
         // 	Toast(res.message || "Error", {
         // 		type: "fail",

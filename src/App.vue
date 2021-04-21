@@ -1,15 +1,10 @@
 <template>
     <div id="app">
-        <!-- 如果有使用路由， -->
         <router-view v-show="!isLoadingOpened" />
-
-        <!-- 加载页 -->
-        <loading
-            v-show="isLoadingOpened"
-            @on-complete="onLoadingComplete"
-        ></loading>
-
-        <bg-music
+        <!-- 加载组件 -->
+        <Loading v-show="isLoadingOpened" @on-complete="onLoadingComplete" />
+        <!-- 背景音乐组件 -->
+        <BgMusic
             :autoplay="bgMusic.autoplay"
             :src="require(`@/assets/${bgMusic.src}`)"
             ref="bgMusic"
@@ -32,16 +27,19 @@ const { bgMusic } = config;
     }
 })
 export default class App extends Vue {
-    private bgMusic = bgMusic;
-    private isLoadingOpened = true;
+    public bgMusic = bgMusic;
+    public isLoadingOpened = true;
 
-    private onLoadingComplete() {
+    public onLoadingComplete() {
         this.isLoadingOpened = false;
     }
+
+    created() {}
 }
 </script>
 
 <style lang="scss">
 @import "~@/styles/normalize.css";
 @import "~@/styles/animate.css";
+@import "~@/styles/index.scss";
 </style>

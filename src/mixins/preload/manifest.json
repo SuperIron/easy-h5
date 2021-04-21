@@ -6,5 +6,9 @@
 	{
 		"filename": "play.png",
 		"path": "assets/images/bg-music/play.png"
+	},
+	{
+		"filename": "arrow.png",
+		"path": "assets/images/page-arrow/arrow.png"
 	}
 ]

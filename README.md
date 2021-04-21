@@ -24,11 +24,13 @@
 
 4. [ ] 文件上传
 
+5. [x] 单屏适配，1rem 等于设计图 1px
+
 ### Todo
 
 1. [x] bg-music
 
-2. [ ] preload
+2. [x] preload
 
     - [x] preload-js
 
@@ -46,9 +48,9 @@
 
     - [x] share
 
-7. [ ] mixins
+7. [x] mixins
 
-    - [ ] loading
+    - [x] loading
 
 8. [x] 通用样式
 
