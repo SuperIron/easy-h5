@@ -17,10 +17,9 @@ export default class Loading extends mixins(preload) {
         this.preload();
     }
 
-    @Watch("progress")
-    onProgressChange(val: number) {
-        // progress change
-    }
+    // progress change
+    // @Watch("progress")
+    // onProgressChange(value: number) {}
 
     created() {
         this.init();

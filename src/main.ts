@@ -6,7 +6,6 @@ import { Toast } from "vant";
 import config from "./config";
 import "@/utils/wx/share";
 
-
 document.title = config.title;
 
 Vue.use(Toast);

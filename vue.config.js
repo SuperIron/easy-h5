@@ -6,6 +6,7 @@ const path = require("path");
 module.exports = {
     publicPath,
     lintOnSave: true,
+
     chainWebpack: config => {
         config.module
             .rule("ts")
@@ -29,13 +30,11 @@ module.exports = {
                 return options;
             });
     },
+
     pluginOptions: {
         "style-resources-loader": {
-            preProcessor: "scss",
-            patterns: [
-                // 全局引入Sass Mixins
-                path.resolve(__dirname, "./src/styles/mixins.scss")
-            ]
+            preProcessor: "sass",
+            patterns: [path.resolve(__dirname, "./src/styles/mixins.scss")]
         }
     }
 };

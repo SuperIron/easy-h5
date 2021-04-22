@@ -33,8 +33,6 @@ export default class App extends Vue {
     public onLoadingComplete() {
         this.isLoadingOpened = false;
     }
-
-    created() {}
 }
 </script>
 
