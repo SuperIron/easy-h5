@@ -10,9 +10,9 @@
 
     - [x] 非微信浏览器，点击屏幕播放
 
-2. [ ] 资源预加载
+2. [x] 资源预加载
 
-    - [ ] 图片预加载
+    - [x] 图片预加载
 
     - [ ] 音频预加载
 
@@ -26,7 +26,9 @@
 
 5. [x] 单屏适配，1rem 等于设计图 1px
 
-### Todo
+6. [x] 引入 Vant 的 Toast 组件
+
+## Todo
 
 1. [x] bg-music
 
@@ -40,7 +42,7 @@
 
     - [ ] token
 
-4. [ ] vuex
+4. [x] vuex
 
 5. [x] router
 
@@ -58,7 +60,7 @@
 
 10. [ ] upload
 
-### Pependencies
+## Dependencies
 
 1. [x] `axios`
 
@@ -70,7 +72,7 @@
 
 5. [x] `preload-js` 资源预加载
 
-### Command
+## Command
 
 ```bash
 # Project setup
@@ -89,11 +91,11 @@ npm run test:unit
 npm run lint
 ```
 
-###
+##
 
 1. vant
     - https://vant-contrib.gitee.io/vant/#/zh-CN/
 
-### author
+## Author
 
 SuperIron

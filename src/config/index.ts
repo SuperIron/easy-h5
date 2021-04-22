@@ -6,8 +6,7 @@ const config = {
     },
     bgMusic: {
         autoplay: true,
-        // 背景音乐路径，放于`@/assests/`目录下
-        src: "audios/bg_music.mp3"
+        src: "/src/assets/audios/bg_music.mp3"
     },
     // 预加载资源
     preload: {

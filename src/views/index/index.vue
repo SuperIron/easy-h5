@@ -1,12 +1,15 @@
 <template>
-    <div class="index">111</div>
+    <div class="index"></div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 
 @Component({
-    components: {}
+    components: {},
+    created() {
+        this.$toast("ssss");
+    }
 })
 export default class extends Vue {}
 </script>

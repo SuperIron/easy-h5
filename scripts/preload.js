@@ -11,7 +11,7 @@ const readDirSync = (path, manifest = []) => {
     return dirs.reduce((pre, item) => {
         const src = `${path}/${item}`;
         if (fs.statSync(src).isDirectory()) {
-            return readDirSync(src, manifest); // 递归
+            return readDirSync(src, manifest); // 递归处理
         }
         pre.push({
             filename: item,

@@ -1,5 +1,8 @@
-@mixin bg-img($url) {
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-image: url("~@/assets/images/#{$url}");
+@mixin background($url, $size: 100% 100%, $position: 0 0, $repeat: no-repeat) {
+    background: {
+        image: url("~@/assets/images/#{$url}");
+        size: $size;
+        position: $position;
+        repeat: no-repeat;
+    }
 }

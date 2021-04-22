@@ -6,7 +6,7 @@
         <!-- 背景音乐组件 -->
         <BgMusic
             :autoplay="bgMusic.autoplay"
-            :src="require(`@/assets/${bgMusic.src}`)"
+            :src="bgMusic.src"
             ref="bgMusic"
         />
     </div>
@@ -41,5 +41,6 @@ export default class App extends Vue {
 <style lang="scss">
 @import "~@/styles/normalize.css";
 @import "~@/styles/animate.css";
-@import "~@/styles/index.scss";
+@import "@/styles/index.scss";
+@import "@/styles/mixins.scss";
 </style>

@@ -29,7 +29,7 @@ export default class BgMusic extends Vue {
         const { isWechat } = getSystemInfo();
         // 微信浏览器支持自动播放
         if (isWechat) {
-            wx.config();
+            // wx.config();
             wx.ready(() => {
                 this.play();
                 !this.autoplay && this.pause();

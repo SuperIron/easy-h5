@@ -4,6 +4,11 @@ html {
     font-size: calc(100vh / 1418);
 }
 
+body {
+    min-height: 100vh;
+    background: #000;
+}
+
 // 全面屏
 @media screen and (max-aspect-ratio: "750 / 1417") {
     html {
