@@ -1,7 +1,7 @@
 const merge = require("webpack-merge");
 const tsImportPlugin = require("ts-import-plugin");
 const publicPath = process.env.NODE_ENV === "production" ? "./" : "/";
-const path = require("path");
+const path = require('path')
 
 module.exports = {
     publicPath,
@@ -31,10 +31,15 @@ module.exports = {
             });
     },
 
+
+
     pluginOptions: {
-        "style-resources-loader": {
-            preProcessor: "sass",
-            patterns: [path.resolve(__dirname, "./src/styles/mixins.scss")]
+        'style-resources-loader': {
+            'preProcessor': 'scss',
+            'patterns': [
+                // 不能用`@`别名路径
+                path.resolve(__dirname, './src/styles/mixins.scss'),
+            ]
         }
     }
 };
