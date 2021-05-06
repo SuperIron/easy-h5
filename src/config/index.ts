@@ -1,8 +1,8 @@
 const config = {
     title: "easy-h5",
     baseURL: {
-        dev: "https://api.opadsz.com/",
-        pro: "https://api.opadsz.com/"
+        dev: "https://api.opadsz.com",
+        pro: "https://api.opadsz.com"
     },
     bgMusic: {
         autoplay: true,
@@ -19,11 +19,11 @@ const config = {
         appId: "wx729b39e5c4715918",
         // 微信登录
         oauth: {
-            isOpened: false,
-            oauthURL: "api/oauth"
+            isOpened: true,
+            oauthURL: "/api/oauth"
         },
         // 微信分享
-        share: { url: "api/zj3j_intro" }
+        share: { url: "/api/zj3j_intro" }
     }
 };
 

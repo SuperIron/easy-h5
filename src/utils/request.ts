@@ -3,7 +3,7 @@ import { Toast } from "vant";
 // import { UserModule } from "@/store/modules/user";
 import config from "@/config";
 
-const baseURL =
+export const baseURL =
     process.env === "development" ? config.baseURL.dev : config.baseURL.pro;
 
 const service = axios.create({

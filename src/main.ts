@@ -5,6 +5,7 @@ import store from "./store";
 import { Toast } from "vant";
 import config from "./config";
 import "@/utils/wx/share";
+import "@/utils/wx/oauth";
 
 document.title = config.title;
 

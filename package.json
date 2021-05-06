@@ -12,6 +12,7 @@
     "dependencies": {
         "axios": "^0.21.0",
         "core-js": "^3.6.5",
+        "js-cookie": "^2.2.1",
         "preload-js": "^0.6.3",
         "vant": "^2.10.11",
         "vue": "^2.6.11",
@@ -23,6 +24,7 @@
     },
     "devDependencies": {
         "@types/jest": "^24.0.19",
+        "@types/js-cookie": "^2.2.6",
         "@typescript-eslint/eslint-plugin": "^2.33.0",
         "@typescript-eslint/parser": "^2.33.0",
         "@vue/cli-plugin-babel": "~4.5.0",
