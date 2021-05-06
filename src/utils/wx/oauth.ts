@@ -8,7 +8,7 @@ const BASE_URL = "https://labs.opadsz.com/";
 if (config.wx.oauth.isOpened && getUserAgent().isWechat) {
     const { appId, oauth } = config.wx;
     const { oauthURL } = oauth;
-    new WxOauth({
+    const wxOauth = new WxOauth({
         appId,
         oauthURL: BASE_URL + oauthURL,
         onSuccess: res => {

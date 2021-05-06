@@ -178,7 +178,7 @@ class WxOauth {
             "https://open.weixin.qq.com/connect/oauth2/authorize",
             {
                 appid: this.appId,
-                redirect_uri: encodeURIComponent('https://labs.opadsz.com/'),
+                redirect_uri: encodeURIComponent("https://labs.opadsz.com/"),
                 response_type: "code",
                 scope: this.scope,
                 state: this.state
@@ -193,6 +193,14 @@ class WxOauth {
     public getUserInfo() {
         const userInfo = Cookies.get(this._getCookieName("userInfo"));
         return userInfo ? JSON.parse(userInfo) : {};
+    }
+
+    public getOpenId() {
+        return Cookies.get(this._getCookieName("openId"));
+    }
+
+    public getUnionId() {
+        return Cookies.get(this._getCookieName("unionId"));
     }
 }
 
