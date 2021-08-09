@@ -39,7 +39,7 @@ export default class Preload extends Vue {
      * 加载完成
      */
     public complete() {
-        this.$emit("on-complete");
+        this.$emit("complete");
     }
 
     /**

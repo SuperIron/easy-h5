@@ -2,7 +2,7 @@
     <div id="app">
         <router-view v-show="!isLoadingOpened" />
         <!-- 加载组件 -->
-        <Loading v-show="isLoadingOpened" @on-complete="onLoadingComplete" />
+        <Loading v-show="isLoadingOpened" @complete="onLoadingComplete" />
         <!-- 背景音乐组件 -->
         <BgMusic
             :autoplay="bgMusic.autoplay"
@@ -41,4 +41,8 @@ export default class App extends Vue {
 @import "~@/styles/animate.css";
 @import "@/styles/index.scss";
 @import "@/styles/mixins.scss";
+
+html {
+    width: 750rpx;
+}
 </style>

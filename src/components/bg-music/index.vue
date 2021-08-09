@@ -1,9 +1,13 @@
 <template>
     <div
         class="bg-music"
-        @click="playing ? pause() : play()"
         :class="[stateClass, 'bg-music__icon']"
-    ></div>
+        @click="playing ? pause() : play()"
+    >
+        <audio loop ref="audio">
+            <source ref="source" src="@/assets/audios/bg_music.mp3" />
+        </audio>
+    </div>
 </template>
 
 <script lang="ts">
@@ -20,6 +24,10 @@ export default class BgMusic extends Vue {
 
     public audio!: HTMLAudioElement;
     public playing = false;
+    public $refs!: {
+        audio: HTMLAudioElement;
+        source: HTMLSourceElement;
+    };
 
     public get stateClass() {
         return this.playing ? "bg-music--play" : "bg-music--pause";
@@ -45,10 +53,8 @@ export default class BgMusic extends Vue {
     }
 
     public init() {
-        const audio = new Audio();
-        audio.src = this.src;
-        audio.loop = true;
-        this.audio = audio;
+        this.audio = this.$refs.audio;
+        this.$refs.source.src = require(`@/${this.src}`);
         this.load();
     }
 
@@ -62,7 +68,7 @@ export default class BgMusic extends Vue {
         this.playing = false;
     }
 
-    created() {
+    mounted() {
         this.init();
     }
 }

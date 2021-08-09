@@ -24,7 +24,7 @@
 
 4. [ ] 文件上传
 
-5. [x] 单屏适配，1rem 等于设计图 1px
+5. [x] 单屏适配，1rpx 等于设计图 1px
 
 6. [x] 引入 Vant 的 Toast 组件
 
@@ -71,6 +71,8 @@
 4. [x] `weixin-js-sdk` 微信 jssdk
 
 5. [x] `preload-js` 资源预加载
+
+6. [x] `vue-orient` 禁止用户旋转
 
 ## Command
 

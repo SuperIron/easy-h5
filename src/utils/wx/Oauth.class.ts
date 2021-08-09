@@ -20,6 +20,8 @@ interface WxOauthOptions {
     scope?: WxOauthScope;
     /** Cookies过期时间/天，默认30天 */
     expires?: number;
+    /** 重定向地址 */
+    redirectURI: string;
     /** 重定向后会带上state参数，开发者可以填写a-zA-Z0-9的参数值，最多128字节 */
     state?: string;
     /** 服务器授权地址，获取openId unionId */
@@ -37,6 +39,7 @@ class WxOauth {
     private expires: number;
     private state: string;
     private oauthURL: string;
+    private redirectURI: string;
     private onSuccess: WxOauthOnSuccess;
     private onFail: WxOauthOnFail;
 
@@ -47,6 +50,7 @@ class WxOauth {
             expires,
             state,
             oauthURL,
+            redirectURI,
             onSuccess,
             onFail
         } = options;
@@ -57,6 +61,7 @@ class WxOauth {
         this.expires = expires || 30;
         this.state = state || "";
         this.oauthURL = oauthURL;
+        this.redirectURI = redirectURI;
 
         this.onSuccess = onSuccess;
         this.onFail = onFail || function() {};
@@ -105,7 +110,7 @@ class WxOauth {
      * 服务器授权，获取用户信息
      */
     private _oauth(code: string, state: string): Promise<void> {
-        return new Promise((resolve, reject) => {
+        return new Promise(async (resolve, reject) => {
             const options: AxiosRequestConfig = {
                 method: "POST",
                 data: {
@@ -114,24 +119,23 @@ class WxOauth {
                 },
                 url: this.oauthURL
             };
-            axios
-                .request(options)
-                .then(res => {
-                    const { openId, unionId, userInfo } = this.onSuccess(
-                        res.data
-                    );
-                    Cookies.set(this._getCookieName("unionId"), unionId, {
-                        expires: this.expires
-                    });
-                    Cookies.set(this._getCookieName("openId"), openId, {
-                        expires: this.expires
-                    });
-                    Cookies.set(this._getCookieName("userInfo"), userInfo, {
-                        expires: this.expires
-                    });
-                    resolve();
-                })
-                .catch(err => this.onFail(err));
+            try {
+                const { data } = await axios.request(options);
+                const { openId, unionId, userInfo } = this.onSuccess(data);
+                Cookies.set(this._getCookieName("unionId"), unionId, {
+                    expires: this.expires
+                });
+                Cookies.set(this._getCookieName("openId"), openId, {
+                    expires: this.expires
+                });
+                Cookies.set(this._getCookieName("userInfo"), userInfo, {
+                    expires: this.expires
+                });
+                resolve();
+            } catch (err) {
+                this.onFail(err);
+                reject();
+            }
         });
     }
 
@@ -178,7 +182,7 @@ class WxOauth {
             "https://open.weixin.qq.com/connect/oauth2/authorize",
             {
                 appid: this.appId,
-                redirect_uri: encodeURIComponent("https://labs.opadsz.com/"),
+                redirect_uri: encodeURIComponent(this.redirectURI),
                 response_type: "code",
                 scope: this.scope,
                 state: this.state

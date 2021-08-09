@@ -1,7 +1,5 @@
 <template>
-    <div class="loading">
-        <!-- Loading -->
-    </div>
+    <div class="loading"></div>
 </template>
 
 <script lang="ts">
@@ -17,9 +15,10 @@ export default class Loading extends mixins(preload) {
         this.preload();
     }
 
-    // progress change
-    // @Watch("progress")
-    // onProgressChange(value: number) {}
+    @Watch("percent")
+    onPercentChange(value: number) {
+        this.$emit("change", value);
+    }
 
     created() {
         this.init();
