@@ -16,17 +16,23 @@
 
     - [ ] 音频预加载
 
-3. [ ] 微信 api
+3. [x] 微信 API
 
-    - [ ] 登录
+    - [x] 登录
 
     - [x] 分享
 
 4. [ ] 文件上传
 
-5. [x] 单屏适配，1rpx 等于设计图 1px
+5. [x] 屏幕适配，1rpx 等于设计图 1px
 
-6. [x] 引入 Vant 的 Toast 组件
+6. [x] 按需引入 Vant 的 Toast 组件
+
+7. [x] 音频库 EasyAudio
+
+8. [x] vue-orient 禁止用户旋转屏幕
+
+9. [x] animate.css CSS3动画
 
 ## Todo
 

@@ -1,28 +1,44 @@
-interface EasyAudioOptions {}
-
-export enum EasyAudioType {
-    Tap = "tap",
-    BgMusic = "bg_music"
+interface EasyAudioOptions {
+    /** 音频路径 */
+    src: string;
+    /** 是否循环播放 */
+    loop: boolean;
 }
 
-export default class EasyAudio {
-    constructor(options?: EasyAudioOptions) {
+/**
+ * 默认参数
+ */
+const DEFAULT_OPTIONS = {
+    src: "",
+    loop: false
+};
+
+export default class EasyAudio<EasyAudioType> {
+    constructor(options: Partial<EasyAudioOptions> = {}) {
+        const { loop, src } = Object.assign(DEFAULT_OPTIONS, options);
         const audio = document.createElement("audio");
-        const source = document.createElement("source");
-        // source.src = require("@/assets/audios/bg_music.mp3");
-        // audio.id = "easyAudio";
-        // audio.appendChild(source);
-        // document.querySelector("body")?.appendChild(audio);
-        audio.src = require("@/assets/audios/bg_music.mp3");
+        loop && (audio.loop = true);
+        src && (audio.src = src);
+        document.querySelector("body")?.appendChild(audio);
         this.audio = audio;
-        this.source = source;
     }
 
-    private type!: EasyAudioType;
     private audio!: HTMLAudioElement;
-    private source!: HTMLSourceElement;
 
+    /**
+     * 播放
+     */
     public play(type?: EasyAudioType) {
+        if (type) {
+            this.audio.src = require(`@/assets/audios/${type}.mp3`);
+        }
         this.audio.play();
+    }
+
+    /**
+     * 暂停
+     */
+    public pause() {
+        this.audio.pause();
     }
 }

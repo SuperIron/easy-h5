@@ -7,8 +7,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import audio from "@/utils/audio";
-import { EasyAudioType } from "@/utils/audio/Audio";
+import audio, { EasyAudioType } from "@/utils/audio";
 
 @Component({
     components: {}

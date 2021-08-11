@@ -6,14 +6,8 @@ const config = {
     },
     bgMusic: {
         autoplay: false,
-        src: "assets/audios/bg_music.mp3"
-    },
-    // 预加载资源
-    preload: {
-        path: {
-            input: "/src/assets/images",
-            output: "/src/mixins/preload"
-        }
+        // assets/audios目录下
+        src: "bg_music.mp3"
     },
     wx: {
         appId: "wx26640b92468a6bea",
