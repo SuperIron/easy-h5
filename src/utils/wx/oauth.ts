@@ -1,16 +1,17 @@
 import config from "@/config";
 import { getUserAgent } from "@/utils/tools";
+import { baseURL } from "@/utils/request";
 import WxOauth from "./Oauth.class";
 
-const BASE_URL = "https://labs.opadsz.com/";
+const { appId, oauth } = config.wx;
+const { isOpened, oauthURL, redirectURI } = oauth;
 
 // 微信授权
-if (config.wx.oauth.isOpened && getUserAgent().isWechat) {
-    const { appId, oauth } = config.wx;
-    const { oauthURL } = oauth;
-    const wxOauth = new WxOauth({
+if (isOpened && getUserAgent().isWechat) {
+    new WxOauth({
         appId,
-        oauthURL: BASE_URL + oauthURL,
+        oauthURL: baseURL + oauthURL,
+        redirectURI,
         onSuccess: res => {
             const { data } = res;
             const { original = {} } = data;

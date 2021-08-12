@@ -5,25 +5,23 @@ const config = {
         pro: "https://api.opadsz.com"
     },
     bgMusic: {
-        autoplay: true,
-        src: "/src/assets/audios/bg_music.mp3"
-    },
-    // 预加载资源
-    preload: {
-        path: {
-            input: "/src/assets/images",
-            output: "/src/mixins/preload"
-        }
+        autoplay: false,
+        // assets/audios目录下
+        src: "bg_music.mp3"
     },
     wx: {
-        appId: "wx729b39e5c4715918",
+        appId: "wx26640b92468a6bea",
         // 微信登录
         oauth: {
-            isOpened: true,
-            oauthURL: "/api/oauth"
+            isOpened: false,
+            redirectURI: "https://h5.opadsz.com/dt_h5/#/",
+            oauthURL: "/api/party_exam/auth"
         },
         // 微信分享
-        share: { url: "/api/zj3j_intro" }
+        share: {
+            isOpened: false,
+            url: "/api/zj3j_intro"
+        }
     }
 };
 

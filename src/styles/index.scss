@@ -1,12 +1,12 @@
 // TODO:设置设计图尺寸
 
 html {
-    font-size: calc(100vh / 1418);
+    font-size: calc(100vw / 750);
+    user-select: none;
 }
 
 body {
     min-height: 100vh;
-    background: #000;
 }
 
 // 全面屏

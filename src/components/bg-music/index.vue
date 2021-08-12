@@ -1,8 +1,7 @@
 <template>
     <div
-        class="bg-music"
+        :class="[stateClass, 'bg-music', 'bg-music__icon']"
         @click="playing ? pause() : play()"
-        :class="[stateClass, 'bg-music__icon']"
     ></div>
 </template>
 
@@ -10,6 +9,7 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 import wx from "weixin-js-sdk";
 import { getSystemInfo } from "@/utils/tools";
+import EasyAudio from "@/utils/audio/Audio";
 
 @Component
 export default class BgMusic extends Vue {
@@ -18,7 +18,7 @@ export default class BgMusic extends Vue {
     /** 自动播放（仅支持微信浏览器内） */
     @Prop({ default: true }) public autoplay!: boolean;
 
-    public audio!: HTMLAudioElement;
+    public audio!: any;
     public playing = false;
 
     public get stateClass() {
@@ -29,7 +29,6 @@ export default class BgMusic extends Vue {
         const { isWechat } = getSystemInfo();
         // 微信浏览器支持自动播放
         if (isWechat) {
-            // wx.config();
             wx.ready(() => {
                 this.play();
                 !this.autoplay && this.pause();
@@ -45,10 +44,10 @@ export default class BgMusic extends Vue {
     }
 
     public init() {
-        const audio = new Audio();
-        audio.src = this.src;
-        audio.loop = true;
-        this.audio = audio;
+        this.audio = new EasyAudio({
+            src: require(`@/assets/audios/${this.src}`),
+            loop: true
+        });
         this.load();
     }
 
@@ -62,7 +61,7 @@ export default class BgMusic extends Vue {
         this.playing = false;
     }
 
-    created() {
+    mounted() {
         this.init();
     }
 }
