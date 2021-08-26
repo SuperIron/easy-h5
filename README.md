@@ -1,86 +1,44 @@
 # easy-h5
 
-## Description
+## 基本信息
 
-基于 Vue 2.x + ts 搭建，可快速进行二次开发的 h5 框架，实现以下功能：
+基于 Vue 2.x + ts 搭建，可快速进行二次开发的 h5 框架。
 
-1. [x] 背景音乐
+## 基础功能
 
-    - [x] 微信浏览器，自动播放
+-   [x] 背景音乐
 
-    - [x] 非微信浏览器，点击屏幕播放
+    -   [x] 微信浏览器，支持自动播放
 
-2. [x] 资源预加载
+    -   [x] 非微信浏览器，支持点击屏幕播放
 
-    - [x] 图片预加载
+-   [x] 资源预加载
 
-    - [ ] 音频预加载
+    -   [x] 图片预加载
 
-3. [x] 微信 API
+    -   [ ] 音频预加载
 
-    - [x] 登录
+-   [x] 微信 API
 
-    - [x] 分享
+    -   [x] 登录
 
-4. [ ] 文件上传
+    -   [x] 分享
 
-5. [x] 屏幕适配，1rpx 等于设计图 1px
+*   [x] 屏幕适配，1rpx 等于设计图 1px
 
-6. [x] 按需引入 Vant 的 Toast 组件
+*   [x] 按需引入 Vant 的 Toast 组件
 
-7. [x] 音频库 EasyAudio
+*   [x] 音频库 EasyAudio
 
-8. [x] vue-orient 禁止用户旋转屏幕
+*   [x] vue-orient 禁止用户旋转屏幕 `https://github.com/SuperIron/vue-disbounce`
 
-9. [x] animate.css CSS3动画
+*   [ ] 文件上传
 
-## Todo
+*   [x] animate.css CSS3 动画
 
-1. [x] bg-music
+*   [x] 按需引用 vant 的 Toast 组件
 
-2. [x] preload
-
-    - [x] preload-js
-
-    - [x] manifest.json
-
-3. [ ] request
-
-    - [ ] token
-
-4. [x] vuex
-
-5. [x] router
-
-6. [ ] wx
-
-    - [x] share
-
-7. [x] mixins
-
-    - [x] loading
-
-8. [x] 通用样式
-
-9. [x] animate CSS3
-
-10. [ ] upload
-
-## Dependencies
-
-1. [x] `axios`
-
-2. [x] `vant` h5 ui 框架
-
-3. [x] `ts-import-plugin` 实现 vant 按需引用
-
-4. [x] `weixin-js-sdk` 微信 jssdk
-
-5. [x] `preload-js` 资源预加载
-
-6. [x] `vue-orient` 禁止用户旋转
-
-## Command
+## 指令
 
 ```bash
 # Project setup
@@ -99,11 +57,6 @@ npm run test:unit
 npm run lint
 ```
 
-##
-
-1. vant
-    - https://vant-contrib.gitee.io/vant/#/zh-CN/
-
-## Author
+## 作者
 
 SuperIron
