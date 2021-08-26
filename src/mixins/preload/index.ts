@@ -53,7 +53,7 @@ export default class Preload extends Vue {
      * 初始化
      */
     public preload() {
-        let preload = new createjs.LoadQueue(true);
+        const preload = new createjs.LoadQueue(true);
         preload.installPlugin(createjs.SOUND); // 加载音频
         preload.addEventListener("progress", this.progress);
         preload.addEventListener("complete", this.complete);

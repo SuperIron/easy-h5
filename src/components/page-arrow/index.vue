@@ -38,9 +38,8 @@ export default class PageArrow extends Vue {
 </script>
 
 <style lang="scss" scoped>
-$raito: 100vw / 750;
-$width: 67 * $raito;
-$height: 52 * $raito;
+$width: 67rpx;
+$height: 52rpx;
 $padding: 5%;
 
 .page-arrow {

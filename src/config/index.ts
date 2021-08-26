@@ -1,26 +1,41 @@
 const config = {
+    /**
+     * 标题
+     */
     title: "easy-h5",
+    /**
+     * 基础url
+     */
     baseURL: {
-        dev: "https://api.opadsz.com",
-        pro: "https://api.opadsz.com"
+        dev: "",
+        pro: ""
     },
+    /**
+     * 背景音乐
+     */
     bgMusic: {
         autoplay: false,
         // assets/audios目录下
         src: "bg_music.mp3"
     },
+    /**
+     * 微信公众号
+     */
     wx: {
-        appId: "wx26640b92468a6bea",
-        // 微信登录
+        appId: "",
+        // 登录
         oauth: {
             isOpened: false,
-            redirectURI: "https://h5.opadsz.com/dt_h5/#/",
-            oauthURL: "/api/party_exam/auth"
+            // 登录重定向地址
+            redirectURI: "",
+            // 服务器授权地址
+            oauthURL: ""
         },
-        // 微信分享
+        // 分享
         share: {
             isOpened: false,
-            url: "/api/zj3j_intro"
+            // 服务器分享地址
+            url: ""
         }
     }
 };

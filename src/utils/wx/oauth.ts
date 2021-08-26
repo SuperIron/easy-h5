@@ -5,9 +5,10 @@ import WxOauth from "./Oauth.class";
 
 const { appId, oauth } = config.wx;
 const { isOpened, oauthURL, redirectURI } = oauth;
+const { isWechat } = getUserAgent();
 
 // 微信授权
-if (isOpened && getUserAgent().isWechat) {
+if (isOpened && isWechat) {
     new WxOauth({
         appId,
         oauthURL: baseURL + oauthURL,

@@ -1,17 +1,7 @@
-// TODO:设置设计图尺寸
-
 html {
-    font-size: calc(100vw / 750);
     user-select: none;
 }
 
 body {
     min-height: 100vh;
-}
-
-// 全面屏
-@media screen and (max-aspect-ratio: "750 / 1417") {
-    html {
-        font-size: calc(100vw / 750);
-    }
 }

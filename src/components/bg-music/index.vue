@@ -43,14 +43,6 @@ export default class BgMusic extends Vue {
         document.body.addEventListener("click", handler);
     }
 
-    public init() {
-        this.audio = new EasyAudio({
-            src: require(`@/assets/audios/${this.src}`),
-            loop: true
-        });
-        this.load();
-    }
-
     public play() {
         this.audio.play();
         this.playing = true;
@@ -59,6 +51,14 @@ export default class BgMusic extends Vue {
     public pause() {
         this.audio.pause();
         this.playing = false;
+    }
+
+    public init() {
+        this.audio = new EasyAudio({
+            src: require(`@/assets/audios/${this.src}`),
+            loop: true
+        });
+        this.load();
     }
 
     mounted() {
